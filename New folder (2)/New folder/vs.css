@@ -1,0 +1,20 @@
+/* ---------- BASE ---------- */
+:root{
+  --blue:#0078d7;
+  --blue-2:#00b4d8;
+  --bg:#f8fbff;
+    --bg-2:#e1ecf9;
+    --bg-3:#ffffff;
+    --bg-4:#f3f6fb;
+    --bg-5:#f0f4fa;
+  --text:#333333;
+    --text-2:#555555;
+    --text-3:#777777;
+    --text-4:#999999;
+    --text-5:#bbbbbb;
+    --border:#dddddd;
+    --border-2:#eeeeee;
+    --shadow:rgba(0,0,0,0.1);
+    --shadow-2:rgba(0,0,0,0.05);
+    --shadow-3:rgba(0,0,0,0.02);
+}

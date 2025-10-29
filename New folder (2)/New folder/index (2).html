@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sher Bahadur — Portfolio</title>
+  <link rel="stylesheet" href="vs.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">Sher Bahadur</div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-inner container">
+        <!-- Placeholder circular profile (SVG data URI) -->
+        <img class="hero-avatar" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><rect fill='%230078d7' width='400' height='400'/><text x='200' y='230' font-size='140' fill='white' font-family='Poppins, sans-serif' text-anchor='middle'>SB</text></svg>" alt="Sher Bahadur">
+        <h1 class="hero-title">Hi, I’m <span>Sher Bahadur</span></h1>
+        <p class="hero-sub">Web Developer &amp; AI Enthusiast — building clean, responsive websites and intelligent systems.</p>
+        <a class="btn" href="#projects">View Projects</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about container fade">
+      <h2>About Me</h2>
+      <p>I’m a passionate web developer from Haveli Lakha, Okara, Punjab, Pakistan. I work on front-end interfaces, game coding (C), and AI systems (Python). I love clean UI, performance, and practical ML solutions.</p>
+      <div class="about-meta">
+        <div>📍 Haveli Lakha, Okara</div>
+        <div>📧 <a href="mailto:sb1895218@gmail.com">sb1895218@gmail.com</a></div>
+        <div>📞 <a href="tel:+923098259417">+92 309 8259417</a></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects container fade">
+      <h2>Selected Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <img src="images/foodiehub.jpg" alt="FoodieHub screenshot" onerror="this.style.opacity=.15; this.nextElementSibling.style.opacity=1;">
+          <div class="card-body">
+            <h3>FoodieHub</h3>
+            <p>Responsive restaurant site with add-to-cart, booking form, and dark mode.</p>
+            <div class="card-actions">
+              <a class="btn-sm" href="#">Live Demo</a>
+              <a class="btn-outline" href="#">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/atlas-ai.jpg" alt="AI Assistant" onerror="this.style.opacity=.15; this.nextElementSibling.style.opacity=1;">
+          <div class="card-body">
+            <h3>AI Assistant</h3>
+            <p>Python-based assistant for task automation and optimization (ATLAS-inspired).</p>
+            <div class="card-actions">
+              <a class="btn-sm" href="#">Details</a>
+              <a class="btn-outline" href="#">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/game-c.jpg" alt="C Game" onerror="this.style.opacity=.15; this.nextElementSibling.style.opacity=1;">
+          <div class="card-body">
+            <h3>Retro Game (C)</h3>
+            <p>Console-style game written in C with scoring and difficulty levels.</p>
+            <div class="card-actions">
+              <a class="btn-sm" href="#">Play</a>
+              <a class="btn-outline" href="#">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/ecommerce.jpg" alt="E-commerce" onerror="this.style.opacity=.15; this.nextElementSibling.style.opacity=1;">
+          <div class="card-body">
+            <h3>E-Commerce Store</h3>
+            <p>HTML/CSS/JS shop with cart UI and checkout flow (front-end prototype).</p>
+            <div class="card-actions">
+              <a class="btn-sm" href="#">Preview</a>
+              <a class="btn-outline" href="#">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact container fade">
+      <h2>Contact</h2>
+      <p>Interested in collaborating? Drop a message — I usually reply quickly.</p>
+      <form id="contact-form" class="contact-form">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2025 Sher Bahadur — Built with care</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
