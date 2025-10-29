@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodieHub - Menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body { 
+      font-family: Arial, sans-serif; 
+      background: #f9f9f9;
+      overflow-x: hidden;
+    }
+    
+    /* Navbar */
+    nav { 
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #28caa7; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 15px 20px; 
+      border-radius: 15px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    nav a img { 
+      width: 50px; 
+      border-radius: 50%; 
+    }
+    
+    .nav-links { 
+      display: flex; 
+      gap: 20px; 
+    }
+    
+    .nav-links a { 
+      text-decoration: none; 
+      color: #000; 
+      font-size: 18px;
+      padding: 8px 16px;
+      border-radius: 6px;
+    }
+    
+    .nav-links a:hover {
+      background: #0a3668;
+      color: #fff;
+    }
+    
+    /* Mobile Menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: #000;
+      margin: 2px 0;
+      transition: 0.4s;
+    }
+    
+    /* Cart Icon */
+    .cart { 
+      position: relative; 
+      font-size: 22px; 
+      cursor: pointer; 
+    }
+    
+    .cart-count { 
+      position: absolute; 
+      top: -8px; 
+      right: -10px; 
+      background: red; 
+      color: white; 
+      font-size: 12px; 
+      padding: 2px 6px; 
+      border-radius: 50%; 
+    }
+    
+    /* Menu Categories */
+    .menu-categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+      padding: 0 20px;
+    }
+
+    .category-btn {
+      background-color: #f0f0f0;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .category-btn:hover {
+      background-color: #e0e0e0;
+    }
+
+    .category-btn.active {
+      background-color: #28caa7;
+      color: #fff;
+    }
+
+    .category-title {
+      text-align: center;
+      margin: 30px 0 10px;
+      color: #333;
+      font-size: 1.8rem;
+      position: relative;
+    }
+
+    .category-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background-color: #28caa7;
+      margin: 10px auto;
+    }
+    
+    /* Menu Section */
+    .menu-section { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      gap: 20px; 
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .menu-item { 
+      background: #fff; 
+      padding: 15px; 
+      border-radius: 8px; 
+      text-align: center; 
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .menu-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .menu-item img {
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+    
+    .menu-item h3 { 
+      margin: 10px 0; 
+      color: #ff6347; 
+    }
+    
+    .price { 
+      font-weight: bold; 
+    }
+    
+    .add-to-cart { 
+      margin-top: 8px; 
+      background: #4553d6; 
+      color: white; 
+      border: none; 
+      padding: 6px 12px; 
+      border-radius: 6px; 
+      cursor: pointer; 
+    }
+    
+    .add-to-cart:hover { 
+      background: #400342; 
+    }
+    
+    /* Cart Modal */
+    .cart-modal { 
+      display: none; 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background: rgba(0,0,0,0.6); 
+      justify-content: center; 
+      align-items: center;
+      z-index: 2000;
+    }
+    
+    .cart-content { 
+      background: #fff; 
+      padding: 20px; 
+      width: 90%;
+      max-width: 400px; 
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Header */
+    header {
+      text-align: center;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 1200px;
+    }
+    
+    /* Footer */
+    footer { 
+      background: #28caa7; 
+      color: white; 
+      text-align: center; 
+      padding: 15px; 
+      margin-top: 30px;
+      border-radius: 15px 15px 0 0;
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 900px) {
+      .menu-section {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        padding: 15px;
+      }
+      
+      header h1 {
+        font-size: 28px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        flex-direction: column;
+        background: #28caa7;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        border-radius: 0 0 15px 15px;
+      }
+      
+      .nav-links.active {
+        left: 0;
+      }
+      
+      .cart-content {
+        width: 90%;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      nav {
+        padding: 15px;
+      }
+      
+      header h1 {
+        font-size: 24px;
+      }
+      
+      .menu-section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+      }
+      
+      .menu-item {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <a href="index2.html"><img src="images (2).jpeg" alt="logo"></a>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index2.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="cart" id="cartBtn"><i class="fa-solid fa-cart-shopping"></i><span class="cart-count" id="cartCount">0</span></div>
+  </nav>
+
+  <header>
+    <h1 style="text-align:center;">🍴 FoodieHub Menu</h1>
+  </header>
+
+  <main>
+    <!-- Menu Categories Navigation -->
+    <div class="menu-categories">
+      <button class="category-btn active" data-category="all">All</button>
+      <button class="category-btn" data-category="appetizers">Appetizers</button>
+      <button class="category-btn" data-category="main-courses">Main Courses</button>
+      <button class="category-btn" data-category="desserts">Desserts</button>
+      <button class="category-btn" data-category="beverages">Beverages</button>
+    </div>
+
+    <!-- Appetizers -->
+    <h2 class="category-title">Appetizers</h2>
+    <div class="menu-section" id="appetizers">
+      <div class="menu-item" data-category="appetizers">
+        <img src="F4.jpg" alt="Mozzarella Sticks" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Mozzarella Sticks</h3>
+        <p>Crispy breaded mozzarella with marinara sauce</p>
+        <p class="price" data-price="5.99">$5.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-category="appetizers">
+        <img src="F5.jpg" alt="Garlic Bread" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Garlic Bread</h3>
+        <p>Toasted bread with garlic butter and herbs</p>
+        <p class="price" data-price="4.49">$4.49</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-category="appetizers">
+        <img src="F6.jpg" alt="Chicken Wings" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Chicken Wings</h3>
+        <p>Spicy buffalo wings with blue cheese dip</p>
+        <p class="price" data-price="7.99">$7.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-category="appetizers">
+        <img src="F1.jpg" alt="Loaded Nachos" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Loaded Nachos</h3>
+        <p>Crispy tortilla chips with cheese, jalapeños, and salsa</p>
+        <p class="price" data-price="6.99">$6.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-category="appetizers">
+        <img src="F2.jpg" alt="Spinach Dip" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Spinach Dip</h3>
+        <p>Creamy spinach and artichoke dip with tortilla chips</p>
+        <p class="price" data-price="5.49">$5.49</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Main Courses -->
+    <h2 class="category-title">Main Courses</h2>
+    <div class="menu-section" id="main-courses">
+      <div class="menu-item" data-category="main-courses">
+        <img src="F1.jpg" alt="Margherita Pizza" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Margherita Pizza</h3>
+        <p>Classic cheese & tomato pizza with fresh basil</p>
+        <p class="price" data-price="8.99">$8.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-category="main-courses">
+        <img src="F2.jpg" alt="Cheeseburger" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Cheeseburger</h3>
+        <p>Juicy beef patty with melted cheese and fresh veggies</p>
+        <p class="price" data-price="6.49">$6.49</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-category="main-courses">
+        <img src="F3.jpg" alt="Pasta Alfredo" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Pasta Alfredo</h3>
+        <p>Creamy fettuccine with parmesan cheese sauce</p>
+        <p class="price" data-price="9.99">$9.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-category="main-courses">
+        <img src="F4.jpg" alt="Grilled Salmon" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Grilled Salmon</h3>
+        <p>Fresh salmon fillet with lemon herb butter and vegetables</p>
+        <p class="price" data-price="12.99">$12.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-category="main-courses">
+        <img src="F5.jpg" alt="Chicken Curry" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Chicken Curry</h3>
+        <p>Tender chicken in aromatic curry sauce with basmati rice</p>
+        <p class="price" data-price="10.49">$10.49</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-category="main-courses">
+        <img src="F6.jpg" alt="Vegetable Stir Fry" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Vegetable Stir Fry</h3>
+        <p>Fresh vegetables in savory sauce with steamed rice</p>
+        <p class="price" data-price="8.49">$8.49</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Desserts -->
+    <h2 class="category-title">Desserts</h2>
+    <div class="menu-section" id="desserts">
+      <div class="menu-item" data-category="desserts">
+        <img src="F4.jpg" alt="Chocolate Cake" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Chocolate Cake</h3>
+        <p>Rich chocolate cake with fudge frosting</p>
+        <p class="price" data-price="4.99">$4.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-category="desserts">
+        <img src="F5.jpg" alt="Cheesecake" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Cheesecake</h3>
+        <p>Creamy New York style cheesecake with berry compote</p>
+        <p class="price" data-price="5.49">$5.49</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-category="desserts">
+        <img src="F6.jpg" alt="Tiramisu" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Tiramisu</h3>
+        <p>Classic Italian dessert with coffee-soaked ladyfingers</p>
+        <p class="price" data-price="5.99">$5.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-category="desserts">
+        <img src="F1.jpg" alt="Apple Pie" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Apple Pie</h3>
+        <p>Warm apple pie with cinnamon and vanilla ice cream</p>
+        <p class="price" data-price="4.49">$4.49</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Beverages -->
+    <h2 class="category-title">Beverages</h2>
+    <div class="menu-section" id="beverages">
+      <div class="menu-item" data-category="beverages">
+        <img src="F6.jpg" alt="Fresh Lemonade" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Fresh Lemonade</h3>
+        <p>Homemade lemonade with mint leaves</p>
+        <p class="price" data-price="2.99">$2.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-category="beverages">
+        <img src="F1.jpg" alt="Iced Coffee" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Iced Coffee</h3>
+        <p>Cold brewed coffee with cream and caramel</p>
+        <p class="price" data-price="3.49">$3.49</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-category="beverages">
+        <img src="F2.jpg" alt="Fruit Smoothie" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Fruit Smoothie</h3>
+        <p>Blend of fresh seasonal fruits with yogurt</p>
+        <p class="price" data-price="4.29">$4.29</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-category="beverages">
+        <img src="F3.jpg" alt="Iced Tea" style="width:100%; height:150px; object-fit:cover; border-radius:8px;">
+        <h3>Iced Tea</h3>
+        <p>Refreshing tea with lemon and mint</p>
+        <p class="price" data-price="2.49">$2.49</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-content">
+      <h2>Your Cart</h2>
+      <div id="cartItems"></div>
+      <p>Total: $<span id="cartTotal">0</span></p>
+      <button id="closeCart">Close</button>
+      <button id="checkoutBtn">Checkout</button>
+    </div>
+  </div>
+
+  <footer><p>© 2025 FoodieHub. All Rights Reserved.</p></footer>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    // Mobile Menu Toggle
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+    
+    function updateCartCount(){document.getElementById('cartCount').innerText=cart.reduce((s,i)=>s+i.qty,0);}
+    function renderCart(){
+      const cartItems=document.getElementById('cartItems');cartItems.innerHTML="";
+      let total=0;
+      cart.forEach((item,i)=>{total+=item.price*item.qty;cartItems.innerHTML+=`<p>${item.name} × ${item.qty} - $${(item.price*item.qty).toFixed(2)}</p>`;});
+      document.getElementById('cartTotal').innerText=total.toFixed(2);
+      updateCartCount();
+    }
+    document.querySelectorAll('.add-to-cart').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const parent=btn.parentElement;
+        const name=parent.querySelector('h3').innerText;
+        const price=parseFloat(parent.querySelector('.price').dataset.price);
+        const existing=cart.find(i=>i.name===name);
+        if(existing){existing.qty++;}else{cart.push({name,price,qty:1});}
+        localStorage.setItem('cart',JSON.stringify(cart));
+        renderCart();
+      });
+    });
+    document.getElementById('cartBtn').onclick=()=>{document.getElementById('cartModal').style.display='flex';renderCart();};
+    document.getElementById('closeCart').onclick=()=>document.getElementById('cartModal').style.display='none';
+    document.getElementById('checkoutBtn').onclick=()=>{
+      localStorage.setItem('cart',JSON.stringify(cart));
+      localStorage.setItem('total',cart.reduce((s,i)=>s+i.price*i.qty,0).toFixed(2));
+      window.location.href="checkout.html";
+    };
+    renderCart();
+    
+    // Menu Category Filtering
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const menuItems = document.querySelectorAll('.menu-item');
+    const categoryTitles = document.querySelectorAll('.category-title');
+
+    // Add event listeners to category buttons
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        const category = button.getAttribute('data-category');
+        
+        // Show/hide menu items based on category
+        if (category === 'all') {
+          // Show all items and category titles
+          menuItems.forEach(item => item.style.display = 'flex');
+          categoryTitles.forEach(title => title.style.display = 'block');
+        } else {
+          // Show only items from selected category
+          menuItems.forEach(item => {
+            if (item.getAttribute('data-category') === category) {
+              item.style.display = 'flex';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+          
+          // Show only the selected category title
+          categoryTitles.forEach(title => {
+            if (title.textContent.trim().toLowerCase().includes(category.replace('-', ' '))) {
+              title.style.display = 'block';
+            } else {
+              title.style.display = 'none';
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

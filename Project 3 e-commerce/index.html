@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>E-Commerce </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+    min-height: 100vh;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 40px 0 20px 0;
+    background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+    color: #fff;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 4px 16px rgba(99,102,241,0.08);
+  }
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+  header p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+  }
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 24px 24px;
+    margin-bottom: 30px;
+  }
+  td {
+    background: #fff;
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(60,72,100,0.10);
+    padding: 24px 16px 18px 16px;
+    width: 33%;
+    vertical-align: top;
+    transition: transform 0.18s, box-shadow 0.18s;
+    position: relative;
+  }
+  td:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(60,72,100,0.18);
+    z-index: 2;
+  }
+  img {
+    display: block;
+    margin: 0 auto 16px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+    transition: box-shadow 0.18s;
+  }
+  td:hover img {
+    box-shadow: 0 4px 16px rgba(99,102,241,0.18);
+  }
+  div {
+    text-align: center;
+  }
+  strong {
+    font-size: 1.15rem;
+    color: #374151;
+  }
+  a {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  a:hover {
+    color: #1e40af;
+    text-decoration: underline;
+  }
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 24px 0 12px 0;
+    background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+    color: #fff;
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 -4px 16px rgba(99,102,241,0.08);
+    font-size: 1.05rem;
+  }
+  footer a {
+    color: #fff;
+    text-decoration: underline;
+    margin: 0 8px;
+    font-weight: 500;
+  }
+  footer a:hover {
+    color: #e0e7ff;
+  }
+  @media (max-width: 900px) {
+    table, tr, td {
+      display: block;
+      width: 100%;
+    }
+    td {
+      margin-bottom: 24px;
+    }
+    tr {
+      margin-bottom: 0;
+    }
+  }
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.5rem;
+    }
+    td {
+      padding: 16px 6px 12px 6px;
+    }
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>My Store</h1>
+    <!-- <p>Simple product listing (pure HTML) — click an image to open the product page.</p> -->
+    <hr>
+  </header>
+
+  <!-- Product grid using a table so layout works without CSS -->
+  <table role="presentation" cellpadding="10" cellspacing="0" border="0">
+    <tr>
+      <!-- Product 1 -->
+      <td align="center" valign="top">
+        <a href="product1.html">
+          <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,q_auto:eco/4b1b2e2e-2e2e-4e2e-8e2e-2e2e2e2e2e2e/air-max-270-mens-shoes-KkLcGR.png" alt="Nike Air Max 270" width="240" height="180" />
+        </a>
+        <div>
+          <strong>Nike Air Max 270</strong><br>
+          Price: $150.00<br>
+          <a href="product1.html">View product</a>
+        </div>
+      </td>
+
+      <!-- Product 2 -->
+      <td align="center" valign="top">
+        <a href="product2.html">
+          <img src="https://www.omegawatches.com/media/catalog/product/cache/1/image/600x/040ec09b1e35df139433887a97daa66f/3/1/31130423001005-1-product-zoom.png" alt="Omega Speedmaster" width="240" height="180" />
+        </a>
+        <div>
+          <strong>Omega Speedmaster</strong><br>
+          Price: $6,300.00<br>
+          <a href="product2.html">View product</a>
+        </div>
+      </td>
+
+      <!-- Product 3 -->
+      <td align="center" valign="top">
+        <a href="product3.html">
+          <img src="https://cdn.shopify.com/s/files/1/0253/6561/0606/products/ClassicLeatherBagBrown_1_800x.jpg" alt="Classic Leather Bag" width="240" height="180" />
+        </a>
+        <div>
+          <strong>Classic Leather Bag</strong><br>
+          Price: $89.50<br>
+          <a href="product3.html">View product</a>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Another row -->
+    <tr>
+      <!-- Product 4 -->
+      <td align="center" valign="top">
+        <a href="product4.html">
+          <img src="https://m.media-amazon.com/images/I/61CGHv6kmWL._AC_SL1500_.jpg" alt="Sony WH-1000XM4 Headphones" width="240" height="180" />
+        </a>
+        <div>
+          <strong>Sony WH-1000XM4 Headphones</strong><br>
+          Price: $349.99<br>
+          <a href="product4.html">View product</a>
+        </div>
+      </td>
+
+      <!-- Product 5 -->
+      <td align="center" valign="top">
+        <a href="product5.html">
+          <img src="https://m.media-amazon.com/images/I/71VbHaAqbML._AC_SL1500_.jpg" alt="Keurig K-Classic Coffee Maker" width="240" height="180" />
+        </a>
+        <div>
+          <strong>Keurig K-Classic Coffee Maker</strong><br>
+          Price: $79.99<br>
+          <a href="product5.html">View product</a>
+        </div>
+      </td>
+
+      <!-- Product 6 -->
+      <td align="center" valign="top">
+        <a href="product6.html">
+          <img src="https://cdn.shopify.com/s/files/1/0558/6417/1766/products/LEDDeskLamp_1_800x.jpg" alt="LED Desk Lamp" width="240" height="180" />
+        </a>
+        <div>
+          <strong>LED Desk Lamp</strong><br>
+          Price: $24.00<br>
+          <a href="product6.html">View product</a>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <hr>
+  <footer>
+    <p>&copy; <span id="year">2025</span> My Store</p>
+    <p><a href="contact.html">Contact</a> | <a href="about.html">About</a></p>
+  </footer>
+</body>
+</html>

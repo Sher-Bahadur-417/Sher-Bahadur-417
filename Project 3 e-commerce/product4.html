@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sneakers Collection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+    min-height: 100vh;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 40px 0 20px 0;
+    background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+    color: #fff;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 4px 16px rgba(99,102,241,0.08);
+  }
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+  header p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+  }
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 24px 24px;
+    margin-bottom: 30px;
+  }
+  td {
+    background: #fff;
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(60,72,100,0.10);
+    padding: 24px 16px 18px 16px;
+    width: 33%;
+    vertical-align: top;
+    transition: transform 0.18s, box-shadow 0.18s;
+    position: relative;
+    text-align: center;
+  }
+  td:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(60,72,100,0.18);
+    z-index: 2;
+  }
+  img {
+    display: block;
+    margin: 0 auto 16px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+    transition: box-shadow 0.18s;
+  }
+  td:hover img {
+    box-shadow: 0 4px 16px rgba(99,102,241,0.18);
+  }
+  div {
+    text-align: center;
+  }
+  strong {
+    font-size: 1.15rem;
+    color: #374151;
+  }
+  a {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  a:hover {
+    color: #1e40af;
+    text-decoration: underline;
+  }
+  .back-link {
+    display: inline-block;
+    margin: 24px auto 0 auto;
+    padding: 10px 24px;
+    background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+    color: #fff;
+    border-radius: 24px;
+    font-size: 1.08rem;
+    font-weight: 500;
+    box-shadow: 0 2px 12px rgba(99,102,241,0.10);
+    transition: background 0.18s, color 0.18s;
+    text-decoration: none;
+  }
+  .back-link:hover {
+    background: #6366f1;
+    color: #e0e7ff;
+  }
+  @media (max-width: 900px) {
+    table, tr, td {
+      display: block;
+      width: 100%;
+    }
+    td {
+      margin-bottom: 24px;
+    }
+    tr {
+      margin-bottom: 0;
+    }
+  }
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.5rem;
+    }
+    td {
+      padding: 16px 6px 12px 6px;
+    }
+  }
+</style>
+
+</head>
+
+<body>
+  <h1>Headphones collection</h1>
+
+  <table role="presentation" cellpadding="10" cellspacing="0" border="0">
+    <tr>
+      <!-- Bag 1 -->
+      <td align="center" valign="top">
+        <img src="https://cdn.shopify.com/s/files/1/0253/6561/0606/products/ClassicLeatherBagBrown_1_800x.jpg" alt="Classic Leather Bag" width="180" height="120" />
+        <div>
+          <strong>Classic Leather Bag</strong><br>
+          Price: $89.50<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 2 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81l3rZK4lnL._AC_SL1500_.jpg" alt="Samsonite Winfield 3" width="180" height="120" />
+        <div>
+          <strong>Samsonite Winfield 3</strong><br>
+          Price: $199.99<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 3 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/71c5lDNWQzL._AC_SL1500_.jpg" alt="Herschel Little America" width="180" height="120" />
+        <div>
+          <strong>Herschel Little America</strong><br>
+          Price: $109.99<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <!-- Bag 4 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81QpkIctqPL._AC_SL1500_.jpg" alt="Fjallraven Kanken" width="180" height="120" />
+        <div>
+          <strong>Fjallraven Kanken</strong><br>
+          Price: $80.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 5 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81Zt42ioCgL._AC_SL1500_.jpg" alt="Michael Kors Jet Set" width="180" height="120" />
+        <div>
+          <strong>Michael Kors Jet Set</strong><br>
+          Price: $248.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 6 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81bR5FQ1N-L._AC_SL1500_.jpg" alt="Adidas Defender Duffel" width="180" height="120" />
+        <div>
+          <strong>Adidas Defender Duffel</strong><br>
+          Price: $35.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+    </tr>
+    <!-- Add more bags in the same style, 3 per row, up to 50 -->
+    <!-- ...existing code for bags 7-50... -->
+  </table>
+  <table role="presentation" cellpadding="10" cellspacing="0" border="0">
+    <tr>
+      <!-- Bag 1 -->
+      <td align="center" valign="top">
+        <img src="https://cdn.shopify.com/s/files/1/0253/6561/0606/products/ClassicLeatherBagBrown_1_800x.jpg" alt="Classic Leather Bag" width="180" height="120" />
+        <div>
+          <strong>Classic Leather Bag</strong><br>
+          Price: $89.50<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 2 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81l3rZK4lnL._AC_SL1500_.jpg" alt="Samsonite Winfield 3" width="180" height="120" />
+        <div>
+          <strong>Samsonite Winfield 3</strong><br>
+          Price: $199.99<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 3 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/71c5lDNWQzL._AC_SL1500_.jpg" alt="Herschel Little America" width="180" height="120" />
+        <div>
+          <strong>Herschel Little America</strong><br>
+          Price: $109.99<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <!-- Bag 4 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81QpkIctqPL._AC_SL1500_.jpg" alt="Fjallraven Kanken" width="180" height="120" />
+        <div>
+          <strong>Fjallraven Kanken</strong><br>
+          Price: $80.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 5 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81Zt42ioCgL._AC_SL1500_.jpg" alt="Michael Kors Jet Set" width="180" height="120" />
+        <div>
+          <strong>Michael Kors Jet Set</strong><br>
+          Price: $248.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 6 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81bR5FQ1N-L._AC_SL1500_.jpg" alt="Adidas Defender Duffel" width="180" height="120" />
+        <div>
+          <strong>Adidas Defender Duffel</strong><br>
+          Price: $35.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+    </tr>
+    <!-- Add more bags in the same style, 3 per row, up to 50 -->
+    <!-- ...existing code for bags 7-50... -->
+  </table>
+  <table role="presentation" cellpadding="10" cellspacing="0" border="0">
+    <tr>
+      <!-- Bag 1 -->
+      <td align="center" valign="top">
+        <img src="https://cdn.shopify.com/s/files/1/0253/6561/0606/products/ClassicLeatherBagBrown_1_800x.jpg" alt="Classic Leather Bag" width="180" height="120" />
+        <div>
+          <strong>Classic Leather Bag</strong><br>
+          Price: $89.50<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 2 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81l3rZK4lnL._AC_SL1500_.jpg" alt="Samsonite Winfield 3" width="180" height="120" />
+        <div>
+          <strong>Samsonite Winfield 3</strong><br>
+          Price: $199.99<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 3 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/71c5lDNWQzL._AC_SL1500_.jpg" alt="Herschel Little America" width="180" height="120" />
+        <div>
+          <strong>Herschel Little America</strong><br>
+          Price: $109.99<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <!-- Bag 4 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81QpkIctqPL._AC_SL1500_.jpg" alt="Fjallraven Kanken" width="180" height="120" />
+        <div>
+          <strong>Fjallraven Kanken</strong><br>
+          Price: $80.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 5 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81Zt42ioCgL._AC_SL1500_.jpg" alt="Michael Kors Jet Set" width="180" height="120" />
+        <div>
+          <strong>Michael Kors Jet Set</strong><br>
+          Price: $248.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 6 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81bR5FQ1N-L._AC_SL1500_.jpg" alt="Adidas Defender Duffel" width="180" height="120" />
+        <div>
+          <strong>Adidas Defender Duffel</strong><br>
+          Price: $35.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+    </tr>
+    <!-- Add more bags in the same style, 3 per row, up to 50 -->
+    <!-- ...existing code for bags 7-50... -->
+  </table>
+  <table role="presentation" cellpadding="10" cellspacing="0" border="0">
+    <tr>
+      <!-- Bag 1 -->
+      <td align="center" valign="top">
+        <img src="https://cdn.shopify.com/s/files/1/0253/6561/0606/products/ClassicLeatherBagBrown_1_800x.jpg" alt="Classic Leather Bag" width="180" height="120" />
+        <div>
+          <strong>Classic Leather Bag</strong><br>
+          Price: $89.50<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 2 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81l3rZK4lnL._AC_SL1500_.jpg" alt="Samsonite Winfield 3" width="180" height="120" />
+        <div>
+          <strong>Samsonite Winfield 3</strong><br>
+          Price: $199.99<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 3 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/71c5lDNWQzL._AC_SL1500_.jpg" alt="Herschel Little America" width="180" height="120" />
+        <div>
+          <strong>Herschel Little America</strong><br>
+          Price: $109.99<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <!-- Bag 4 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81QpkIctqPL._AC_SL1500_.jpg" alt="Fjallraven Kanken" width="180" height="120" />
+        <div>
+          <strong>Fjallraven Kanken</strong><br>
+          Price: $80.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 5 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81Zt42ioCgL._AC_SL1500_.jpg" alt="Michael Kors Jet Set" width="180" height="120" />
+        <div>
+          <strong>Michael Kors Jet Set</strong><br>
+          Price: $248.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 6 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81bR5FQ1N-L._AC_SL1500_.jpg" alt="Adidas Defender Duffel" width="180" height="120" />
+        <div>
+          <strong>Adidas Defender Duffel</strong><br>
+          Price: $35.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+    </tr>
+    <!-- Add more bags in the same style, 3 per row, up to 50 -->
+    <!-- ...existing code for bags 7-50... -->
+  </table>  <table role="presentation" cellpadding="10" cellspacing="0" border="0">
+    <tr>
+      <!-- Bag 1 -->
+      <td align="center" valign="top">
+        <img src="https://cdn.shopify.com/s/files/1/0253/6561/0606/products/ClassicLeatherBagBrown_1_800x.jpg" alt="Classic Leather Bag" width="180" height="120" />
+        <div>
+          <strong>Classic Leather Bag</strong><br>
+          Price: $89.50<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 2 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81l3rZK4lnL._AC_SL1500_.jpg" alt="Samsonite Winfield 3" width="180" height="120" />
+        <div>
+          <strong>Samsonite Winfield 3</strong><br>
+          Price: $199.99<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 3 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/71c5lDNWQzL._AC_SL1500_.jpg" alt="Herschel Little America" width="180" height="120" />
+        <div>
+          <strong>Herschel Little America</strong><br>
+          Price: $109.99<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <!-- Bag 4 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81QpkIctqPL._AC_SL1500_.jpg" alt="Fjallraven Kanken" width="180" height="120" />
+        <div>
+          <strong>Fjallraven Kanken</strong><br>
+          Price: $80.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 5 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81Zt42ioCgL._AC_SL1500_.jpg" alt="Michael Kors Jet Set" width="180" height="120" />
+        <div>
+          <strong>Michael Kors Jet Set</strong><br>
+          Price: $248.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 6 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81bR5FQ1N-L._AC_SL1500_.jpg" alt="Adidas Defender Duffel" width="180" height="120" />
+        <div>
+          <strong>Adidas Defender Duffel</strong><br>
+          Price: $35.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+    </tr>
+    <!-- Add more bags in the same style, 3 per row, up to 50 -->
+    <!-- ...existing code for bags 7-50... -->
+  </table>
+    <table role="presentation" cellpadding="10" cellspacing="0" border="0">
+    <tr>
+      <!-- Bag 1 -->
+      <td align="center" valign="top">
+        <img src="https://cdn.shopify.com/s/files/1/0253/6561/0606/products/ClassicLeatherBagBrown_1_800x.jpg" alt="Classic Leather Bag" width="180" height="120" />
+        <div>
+          <strong>Classic Leather Bag</strong><br>
+          Price: $89.50<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 2 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81l3rZK4lnL._AC_SL1500_.jpg" alt="Samsonite Winfield 3" width="180" height="120" />
+        <div>
+          <strong>Samsonite Winfield 3</strong><br>
+          Price: $199.99<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 3 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/71c5lDNWQzL._AC_SL1500_.jpg" alt="Herschel Little America" width="180" height="120" />
+        <div>
+          <strong>Herschel Little America</strong><br>
+          Price: $109.99<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <!-- Bag 4 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81QpkIctqPL._AC_SL1500_.jpg" alt="Fjallraven Kanken" width="180" height="120" />
+        <div>
+          <strong>Fjallraven Kanken</strong><br>
+          Price: $80.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 5 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81Zt42ioCgL._AC_SL1500_.jpg" alt="Michael Kors Jet Set" width="180" height="120" />
+        <div>
+          <strong>Michael Kors Jet Set</strong><br>
+          Price: $248.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 6 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81bR5FQ1N-L._AC_SL1500_.jpg" alt="Adidas Defender Duffel" width="180" height="120" />
+        <div>
+          <strong>Adidas Defender Duffel</strong><br>
+          Price: $35.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+    </tr>
+    <!-- Add more bags in the same style, 3 per row, up to 50 -->
+    <!-- ...existing code for bags 7-50... -->
+  </table>
+    <table role="presentation" cellpadding="10" cellspacing="0" border="0">
+    <tr>
+      <!-- Bag 1 -->
+      <td align="center" valign="top">
+        <img src="https://cdn.shopify.com/s/files/1/0253/6561/0606/products/ClassicLeatherBagBrown_1_800x.jpg" alt="Classic Leather Bag" width="180" height="120" />
+        <div>
+          <strong>Classic Leather Bag</strong><br>
+          Price: $89.50<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 2 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81l3rZK4lnL._AC_SL1500_.jpg" alt="Samsonite Winfield 3" width="180" height="120" />
+        <div>
+          <strong>Samsonite Winfield 3</strong><br>
+          Price: $199.99<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 3 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/71c5lDNWQzL._AC_SL1500_.jpg" alt="Herschel Little America" width="180" height="120" />
+        <div>
+          <strong>Herschel Little America</strong><br>
+          Price: $109.99<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <!-- Bag 4 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81QpkIctqPL._AC_SL1500_.jpg" alt="Fjallraven Kanken" width="180" height="120" />
+        <div>
+          <strong>Fjallraven Kanken</strong><br>
+          Price: $80.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 5 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81Zt42ioCgL._AC_SL1500_.jpg" alt="Michael Kors Jet Set" width="180" height="120" />
+        <div>
+          <strong>Michael Kors Jet Set</strong><br>
+          Price: $248.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 6 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81bR5FQ1N-L._AC_SL1500_.jpg" alt="Adidas Defender Duffel" width="180" height="120" />
+        <div>
+          <strong>Adidas Defender Duffel</strong><br>
+          Price: $35.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+    </tr>
+    <!-- Add more bags in the same style, 3 per row, up to 50 -->
+    <!-- ...existing code for bags 7-50... -->
+  </table>
+    <table role="presentation" cellpadding="10" cellspacing="0" border="0">
+    <tr>
+      <!-- Bag 1 -->
+      <td align="center" valign="top">
+        <img src="https://cdn.shopify.com/s/files/1/0253/6561/0606/products/ClassicLeatherBagBrown_1_800x.jpg" alt="Classic Leather Bag" width="180" height="120" />
+        <div>
+          <strong>Classic Leather Bag</strong><br>
+          Price: $89.50<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 2 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81l3rZK4lnL._AC_SL1500_.jpg" alt="Samsonite Winfield 3" width="180" height="120" />
+        <div>
+          <strong>Samsonite Winfield 3</strong><br>
+          Price: $199.99<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 3 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/71c5lDNWQzL._AC_SL1500_.jpg" alt="Herschel Little America" width="180" height="120" />
+        <div>
+          <strong>Herschel Little America</strong><br>
+          Price: $109.99<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <!-- Bag 4 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81QpkIctqPL._AC_SL1500_.jpg" alt="Fjallraven Kanken" width="180" height="120" />
+        <div>
+          <strong>Fjallraven Kanken</strong><br>
+          Price: $80.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 5 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81Zt42ioCgL._AC_SL1500_.jpg" alt="Michael Kors Jet Set" width="180" height="120" />
+        <div>
+          <strong>Michael Kors Jet Set</strong><br>
+          Price: $248.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+      <!-- Bag 6 -->
+      <td align="center" valign="top">
+        <img src="https://m.media-amazon.com/images/I/81bR5FQ1N-L._AC_SL1500_.jpg" alt="Adidas Defender Duffel" width="180" height="120" />
+        <div>
+          <strong>Adidas Defender Duffel</strong><br>
+          Price: $35.00<br>
+          <a href="product3.html">View</a>
+        </div>
+      </td>
+    </tr>
+    <!-- Add more bags in the same style, 3 per row, up to 50 -->
+    <!-- ...existing code for bags 7-50... -->
+  </table>
+  <hr>
+  <p><a href="index.html">⬅ Back to Store</a></p>
+</body>
+
+</html>

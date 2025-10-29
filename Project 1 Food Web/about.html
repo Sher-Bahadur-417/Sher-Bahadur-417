@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodieHub - About Us</title>
+
+  <style>
+      /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    /* Navbar */
+    nav {
+      background: #28caa7;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+      /* position: sticky; */
+      top: 0;
+      z-index: 100;
+      border-radius: 15px 15px 15px 15px;
+
+    }
+
+    nav img {
+      width: 50px;
+      margin: -9px;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+      font-size: 18px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-transform: capitalize;
+    }
+
+    .nav-links a:hover {
+      background: #0a3668;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #000;
+      border-radius: 2px;
+    }
+      header { background: #ff6347; 
+        color: white; 
+        padding: 15px; 
+        text-align: center;
+     }
+    main { padding: 20px;
+         max-width: 800px;
+         margin: auto;
+         line-height: 1.6;
+     }
+    h2 { text-align: center;
+         margin-bottom: 20px;
+     }
+    footer { background: #333;
+         color: white; 
+        text-align: center;
+         padding: 10px; 
+        margin-top: 20px;
+     }
+        /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #28caa7;
+        flex-direction: column;
+        width: 200px;
+        text-align: center;
+        padding: 20px;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+      <!-- Navbar -->
+ <nav>
+  <a href="index2.html">
+    <img src="images (2).jpeg" alt="logo">
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="home.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+  <header>
+    <h1>🍴 About FoodieHub</h1>
+    <p>Good food. Great vibes.</p>
+  </header>
+
+  <!-- <nav>
+    <a href="home.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav> -->
+
+  <main>
+    <h2>Who We Are</h2>
+    <p>
+      Welcome to <b>FoodieHub</b>, your go-to place for delicious meals made with love. 
+      We believe that food is not just about taste but about creating memorable experiences. 
+    </p>
+
+    <h2>Our Story</h2>
+    <p>
+      Founded in 2020, FoodieHub started as a small local restaurant with a big dream —
+      to bring people together over fresh, mouth-watering food. Today, we are proud to serve 
+      a wide variety of dishes inspired by global flavors.
+    </p>
+
+    <h2>Our Mission</h2>
+    <p>
+      At FoodieHub, our mission is simple: <i>“Serving happiness on every plate.”</i> 
+      We use the freshest ingredients, innovative recipes, and a touch of passion to 
+      make every meal unforgettable.
+    </p>
+  </main>
+
+  <footer>
+    <p>© 2025 FoodieHub. All Rights Reserved.</p>
+  </footer>
+ <!-- JS for Hamburger -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

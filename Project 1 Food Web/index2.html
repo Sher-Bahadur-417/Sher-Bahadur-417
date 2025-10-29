@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodieHub</title>
+  <link rel="icon" href="images (3).jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #28caa7;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    nav a img {
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+      font-size: 18px;
+      padding: 8px 16px;
+      border-radius: 6px;
+    }
+
+    .nav-links a:hover {
+      background: #0a3668;
+      color: #fff;
+    }
+
+    /* Mobile Menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: #000;
+      margin: 2px 0;
+      transition: 0.4s;
+    }
+
+    /* Cart Icon */
+    .cart {
+      position: relative;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -10px;
+      background: red;
+      color: white;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 50%;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      border-radius: 15px;
+      background: url('images (2).jpeg') no-repeat center/cover;
+      color: white;
+      margin: 20px auto;
+      max-width: 1200px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+      font-size: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    /* Gallery */
+    .gallery {
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .item {
+      text-align: center;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      transition: transform 0.3s ease;
+    }
+    
+    .item:hover {
+      transform: translateY(-5px);
+    }
+
+    .item img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      display: inline-block;
+      background: #28caa7;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin-top: 5px;
+    }
+
+    .add-to-cart {
+      margin-top: 10px;
+      background: #4553d6;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .add-to-cart:hover {
+      background: #400342;
+    }
+
+    /* Cart Modal */
+    .cart-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .cart-content {
+      background: #fff;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .cart-items {
+      max-height: 200px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+    }
+
+    .cart-total {
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    .close-cart,
+    .checkout {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .close-cart {
+      background: red;
+      color: white;
+    }
+
+    .checkout {
+      background: green;
+      color: white;
+      margin-left: 10px;
+    }
+
+    footer {
+      background: #28caa7;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      border-radius: 15px 15px 0 0;
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        padding: 20px;
+      }
+      
+      .hero h1 {
+        font-size: 36px;
+      }
+      
+      .hero p {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        flex-direction: column;
+        background: #28caa7;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        border-radius: 0 0 15px 15px;
+      }
+      
+      .nav-links.active {
+        left: 0;
+      }
+      
+      .hero h1 {
+        font-size: 32px;
+      }
+      
+      .cart-content {
+        width: 90%;
+        max-width: 400px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        padding: 15px;
+      }
+      
+      .hero h1 {
+        font-size: 28px;
+      }
+      
+      .hero p {
+        font-size: 16px;
+      }
+      
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px;
+      }
+      
+      .item {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <a href="index2.html"><img src="images (2).jpeg" alt="logo"></a>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="home.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="cart" id="cartBtn">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Welcome to FoodieHub</h1>
+    <p>Delicious meals made with love ❤️</p>
+  </section>
+
+  <!-- Food Gallery -->
+  <section class="gallery">
+    <div class="item">
+      <img src="F1.jpg" alt="Pizza">
+      <h3>Cheese Pizza</h3>
+      <p>Freshly baked pizza with mozzarella and basil.</p>
+      <span class="price" data-price="12">$12</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="item">
+      <img src="F2.jpg" alt="Burger">
+      <h3>Beef Burger</h3>
+      <p>Juicy beef patty with lettuce, tomato, and cheese.</p>
+      <span class="price" data-price="10">$10</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="item">
+      <img src="F3.jpg" alt="Pasta">
+      <h3>Italian Pasta</h3>
+      <p>Penne pasta with homemade tomato sauce.</p>
+      <span class="price" data-price="15">$15</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </section>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-content">
+      <h2>Your Cart</h2>
+      <div class="cart-items" id="cartItems"></div>
+      <p class="cart-total">Total: $<span id="cartTotal">0</span></p>
+      <button class="close-cart" id="closeCart">Close</button>
+      <button class="checkout" id="checkoutBtn">Checkout</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 FoodieHub. All rights reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const addToCartBtns = document.querySelectorAll('.add-to-cart');
+    const cartCount = document.getElementById('cartCount');
+    const cartModal = document.getElementById('cartModal');
+    const cartBtn = document.getElementById('cartBtn');
+    const closeCart = document.getElementById('closeCart');
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    let cart = [];
+
+    // Add to Cart
+    addToCartBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const name = item.querySelector('h3').innerText;
+        const price = parseFloat(item.querySelector('.price').dataset.price);
+
+        const existing = cart.find(i => i.name === name);
+        if (existing) {
+          existing.qty++;
+        } else {
+          cart.push({ name, price, qty: 1 });
+        }
+
+        renderCart();
+      });
+    });
+
+    // Show/Close Cart
+    cartBtn.addEventListener('click', () => cartModal.style.display = 'flex');
+    closeCart.addEventListener('click', () => cartModal.style.display = 'none');
+
+    // Render Cart
+    function renderCart() {
+      cartItems.innerHTML = "";
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        total += item.price * item.qty;
+        const div = document.createElement('div');
+        div.style.display = "flex";
+        div.style.justifyContent = "space-between";
+        div.style.alignItems = "center";
+        div.style.marginBottom = "8px";
+        div.innerHTML = `
+          <span>${item.name} - $${item.price} × ${item.qty}</span>
+          <div>
+            <button onclick="decreaseQty(${index})">➖</button>
+            <button onclick="increaseQty(${index})">➕</button>
+            <button onclick="removeItem(${index})">❌</button>
+          </div>
+        `;
+        cartItems.appendChild(div);
+      });
+
+      cartCount.innerText = cart.reduce((sum, i) => sum + i.qty, 0);
+      cartTotal.innerText = total.toFixed(2);
+    }
+
+    // Quantity +/-
+    function increaseQty(i) { cart[i].qty++; renderCart(); }
+    function decreaseQty(i) { cart[i].qty > 1 ? cart[i].qty-- : cart.splice(i, 1); renderCart(); }
+    function removeItem(i) { cart.splice(i, 1); renderCart(); }
+
+    // Checkout
+    checkoutBtn.addEventListener('click', () => {
+      const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem('total', total.toFixed(2));
+      window.location.href = "checkout.html";
+    });
+    
+    // Mobile Menu Toggle
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>

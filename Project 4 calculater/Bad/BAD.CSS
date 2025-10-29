@@ -1,0 +1,163 @@
+    /* <!-- <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .calculator {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .calculator-display {
+            width: 100%;
+            height: 60px;
+            font-size: 28px;
+            text-align: right;
+            margin-bottom: 15px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .calculator-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .button {
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .button:hover {
+            background-color: #e0e0e0;
+        }
+        .operator {
+            background-color: #f9a825;
+            color: white;
+        }
+        .operator:hover {
+            background-color: #f57c00;
+        }
+        .clear {
+            background-color: #f44336;
+            color: white;
+        }
+        .clear:hover {
+            background-color: #d32f2f;
+        }
+        .equals {
+            background-color: #4caf50;
+            color: white;
+        }
+        .equals:hover {
+            background-color: #388e3c;
+        }
+            color: white;
+        }
+        .equals {
+            background-color: #43a047;
+            color: white;
+            grid-column: span 1;
+        }
+        .clear {
+            background-color: #e53935;
+            color: white;
+        }
+        .zero {
+            grid-column: span 2;
+        }   
+        .decimal {
+            grid-column: span 1;
+        }
+          
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+    button {
+        width: 100%;
+        padding: 15px;
+    }
+}   
+@media (min-width: 601px) {
+    .container {
+        width: 400px;
+    }
+}
+@media (min-width: 900px) {
+    .container {
+        width: 600px;
+    }
+}   
+@media (min-width: 1200px) {
+    .container {
+        width: 800px;
+    }
+}   
+@media (min-width: 1500px) {
+    .container {
+        width: 1000px;
+    }
+}   
+@media (min-width: 1800px) {
+    .container {
+        width: 1200px;
+    }
+}   
+@media (min-width: 2100px) {
+    .container {
+        width: 1400px;
+    }
+}   
+@media (min-width: 2400px) {
+    .container {
+        width: 1600px;
+    }
+}   
+@media (min-width: 2700px) {
+    .container {
+        width: 1800px;
+    }
+}   
+
+@media (min-width: 3000px) {
+    .container {
+        width: 2000px;
+    }
+}   
+
+@media (min-width: 3300px) {
+    .container {
+        width: 2200px;
+    }
+}   @media (min-width: 3600px) {
+    .container {
+        width: 2400px;
+    }
+}
+@media (min-width: 3900px) {
+    .container {
+        width: 2600px;
+    }
+}   @media (min-width: 4200px) {
+    .container {
+        width: 2800px;
+    }
+}   
+    </style> 
+        <div class="kbd-hint">Tip: you can use keyboard (numbers, + - * /, Enter, Backspace, %)</div>
+    --> */
