@@ -5,36 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-             body {
-            font-family: "Poppins", sans-serif;
-            background: var(--bg-color);
-            color: var(--text-color);
-            transition: background 0.3s, color 0.3s;
-        }
-        
-        body.dark-mode {
-            --bg-color: #000;
-            --text-color: #fff;
-            --header-bg: #000;
-        } 
-    </style>
+    
 </head>
 <body>
     </nav>
     <button id="mode-toggle">🌙</button>
-    <script>
-        // Dark/Light Mode
-        const modeToggle = document.getElementById("mode-toggle");
-        modeToggle.addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
-            modeToggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-        });
-
-
-
-        
-    </script>
+<script src="script.js"></script>
 </body>
 
 </html>

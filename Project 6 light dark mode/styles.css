@@ -1,0 +1,12 @@
+   body {
+            font-family: "Poppins", sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        body.dark-mode {
+            --bg-color: #000;
+            --text-color: #fff;
+            --header-bg: #000;
+        } 
