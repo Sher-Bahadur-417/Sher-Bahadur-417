@@ -1,0 +1,144 @@
+/* ======== GLOBAL COLOR VARIABLES ======== */
+:root {
+    --bg-color: radial-gradient(circle at top, #0b1626, #050b18);
+    --calc-bg: rgba(15, 30, 60, 0.9);
+    --text-color: #00e5ff;
+    --button-bg: rgba(0, 40, 80, 0.9);
+    --button-hover: rgba(0, 90, 180, 0.9);
+    --equal-bg: linear-gradient(135deg, #009dff, #00ffd0);
+    --shadow-color: rgba(0, 150, 255, 0.25);
+}
+
+/* ======== LIGHT THEME VARIABLES ======== */
+.light-mode {
+    --bg-color: radial-gradient(circle at top, #e4ebf5, #cfd8dc);
+    --calc-bg: rgba(255, 255, 255, 0.9);
+    --text-color: #000;
+    --button-bg: rgba(220, 220, 220, 0.9);
+    --button-hover: rgba(255, 255, 255, 1);
+    --equal-bg: linear-gradient(135deg, #2196f3, #4caf50);
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* ======== BODY ======== */
+body {
+    background: var(--bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background 0.4s ease;
+}
+
+/* ======== TOGGLE BUTTON ======== */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-btn {
+    background: var(--calc-bg);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    padding: 10px 12px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+#theme-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ======== CALCULATOR CONTAINER ======== */
+.row {
+    background: var(--calc-bg);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 15px;
+    border-radius: 18px;
+    box-shadow: 0 0 25px var(--shadow-color);
+    width: 100%;
+    max-width: 280px;
+    backdrop-filter: blur(12px);
+    transition: all 0.4s ease;
+}
+
+/* ======== DISPLAY ======== */
+.row input {
+    grid-column: span 4;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    font-size: clamp(16px, 4.5vw, 22px);
+    text-align: right;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px var(--shadow-color);
+    margin-bottom: 8px;
+    transition: font-size 0.2s ease, color 0.3s, box-shadow 0.3s;
+}
+
+/* ======== BUTTONS ======== */
+.button {
+    background: var(--button-bg);
+    color: var(--text-color);
+    font-size: clamp(15px, 3.5vw, 18px);
+    border: none;
+    border-radius: 10px;
+    padding: clamp(8px, 2.5vw, 12px);
+    cursor: pointer;
+    box-shadow: 0 0 6px var(--shadow-color);
+    transition: all 0.2s ease-in-out;
+    user-select: none;
+}
+
+.button:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+/* ======== SPECIAL BUTTONS ======== */
+.clear,
+.delete {
+    background: rgba(255, 70, 70, 0.8);
+    color: #fff;
+}
+
+.clear:hover,
+.delete:hover {
+    background: rgba(255, 0, 0, 0.9);
+}
+
+.equal {
+    background: var(--equal-bg);
+    color: #000;
+    font-weight: bold;
+}
+
+/* ======== ZERO BUTTON ======== */
+.zero {
+    grid-column: span 2;
+    background: rgba(0, 60, 120, 0.9);
+    font-weight: 500;
+    border-radius: 12px;
+}
+
+.light-mode .zero {
+    background: rgba(210, 210, 210, 0.9);
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 480px) {
+    .row {
+        max-width: 260px;
+    }
+}
